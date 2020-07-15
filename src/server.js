@@ -16,7 +16,7 @@ app.get('/restaurants', async(req,res)=>{
 
 })
 //Pesquisa por Bairro funcionando
-app.get('/restaurants/borough/:borough',async(req,res) =>{
+app.get('/restaurants/:borough',async(req,res) =>{
     const borough = req.params.borough;
   var restaurant = await Restaurant.find({borough:borough})
   if(!restaurant){
@@ -27,7 +27,7 @@ app.get('/restaurants/borough/:borough',async(req,res) =>{
 
 })
 //Pesquisa por nome funcionando
-app.get('/restaurants/name/:name',async(req,res) =>{
+app.get('/restaurants/:name',async(req,res) =>{
     const name = req.params.name;
   var restaurant = await Restaurant.find({name:name})
   if(!restaurant){
